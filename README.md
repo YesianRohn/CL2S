@@ -1,15 +1,11 @@
-# DM2F-Net
+# Rethinking the Elementary function fusion for Single-Image Dehazing
 
-By Zijun Deng, Lei Zhu, Xiaowei Hu, Chi-Wing Fu, Xuemiao Xu, Qing Zhang, Jing Qin, and Pheng-Ann Heng.
-
-This repo is the implementation of
-"[Deep Multi-Model Fusion for Single-Image Dehazing](https://openaccess.thecvf.com/content_ICCV_2019/papers/Deng_Deep_Multi-Model_Fusion_for_Single-Image_Dehazing_ICCV_2019_paper.pdf)"
-(ICCV 2019), written by Zijun Deng at the South China University of Technology.
+By Yesian Rohn 
 
 ## Results
 
-The dehazing results can be found at 
-[Google Drive](https://drive.google.com/drive/folders/1ZVBI_3Y2NthVLeK7ODMIB5vRjmN9payF?usp=sharing).
+The model weights can be found at 
+[Google Drive](https://drive.google.com/drive/folders/11pAVyD813h5AZmR8bn_aUyUmdIYuGQEC?usp=sharing).
 
 ## Installation & Preparation
 
@@ -19,8 +15,8 @@ Make sure you have `Python>=3.7` installed on your machine.
 
 1. Create conda environment
 
-       conda create -n dm2f
-       conda activate dm2f
+       conda create -n cl2s
+       conda activate cl2s
 
 2. Install dependencies (test with PyTorch 1.8.0):
 
@@ -36,24 +32,23 @@ Make sure you have `Python>=3.7` installed on your machine.
 
    * Download the O-Haze dataset from the [official webpage](https://data.vision.ee.ethz.ch/cvl/ntire18//o-haze/).
 
+   * Download the HazeRD dataset from the [Baidu Netdisk](https://pan.baidu.com/s/1DgfwitXkSh1U24Ax24ii9g?pwd=Haze).
+
+   * C-Haze is collected by me from the Internet.
+
    * Make a directory `./data` and create a symbolic link for uncompressed data, e.g., `./data/RESIDE`.
 
 ## Training
 
-1. ~~Set the path of pretrained ResNeXt model in resnext/config.py~~
-2. Set the path of datasets in tools/config.py
-3. Run by ```python train.py```
-
-~~The pretrained ResNeXt model is ported from the [official](https://github.com/facebookresearch/ResNeXt) torch version,
-using the [convertor](https://github.com/clcarwin/convert_torch_to_pytorch) provided by clcarwin. 
-You can directly [download](https://drive.google.com/open?id=1dnH-IHwmu9xFPlyndqI6MfF4LvH6JKNQ) the pretrained model ported by me.~~
+1. Set the path of datasets in tools/config.py
+2. Run by ```python train.py```
 
 Use pretrained ResNeXt (resnext101_32x8d) from torchvision.
 
 *Hyper-parameters* of training were set at the top of *train.py*, and you can conveniently
 change them as you need.
 
-Training a model on a single ~~GTX 1080Ti~~ TITAN RTX GPU takes about ~~4~~ 5 hours.
+Training a model on a single RTX3090 GPU takes about 5 hours.
 
 ## Testing
 
@@ -66,18 +61,24 @@ change them as you need.
 
 ## License
 
-DM2F-Net is released under the [MIT license](LICENSE).
+CL2S is released under the [MIT license](LICENSE).
 
-## Citation
 
-If you find the paper or the code helpful to your research, please cite the project.
+## Acknowledgments & Citations
 
+We gratefully acknowledge the work of Zijun Deng et al. presented in their ICCV 2019 paper, "Deep Multi-Model Fusion for Single-Image Dehazing". Our project is built upon the foundation laid by their research and the open-source code shared at [DM2F-Net](https://github.com/zijundeng/DM2F-Net).
+
+**Citation Guidance:**
+
+For utilizing ideas or code from this project, please cite:
 ```
 @inproceedings{deng2019deep,
   title={Deep multi-model fusion for single-image dehazing},
-  author={Deng, Zijun and Zhu, Lei and Hu, Xiaowei and Fu, Chi-Wing and Xu, Xuemiao and Zhang, Qing and Qin, Jing and Heng, Pheng-Ann},
-  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
+  authors={Deng, Zijun; Zhu, Lei; Hu, Xiaowei; Fu, Chi-Wing; Xu, Xuemiao; Zhang, Qing; Qin, Jing; Heng, Pheng-Ann},
+  booktitle={IEEE/CVF International Conference on Computer Vision},
   pages={2453--2462},
   year={2019}
 }
 ```
+We appreciate the authors' contributions and encourage proper citations to recognize their original work.
+
