@@ -2,10 +2,21 @@
 
 By Yesian Rohn 
 
+
+
+Our Model——CL2S means "Change Logarithmic to Sinusoidal function".
+
 ## Results
 
-The model weights can be found at 
-[Google Drive](https://drive.google.com/drive/folders/11pAVyD813h5AZmR8bn_aUyUmdIYuGQEC?usp=sharing).
+Results on Benchmark：
+
+![result](./benchmark.png)
+
+Results on C-Haze：
+
+![result](./C-Haze/result/result.png)
+
+The model weights can be found at  [Google Drive](https://drive.google.com/drive/folders/11pAVyD813h5AZmR8bn_aUyUmdIYuGQEC?usp=sharing).
 
 ## Installation & Preparation
 
