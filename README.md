@@ -83,6 +83,15 @@ We gratefully acknowledge the work of Zijun Deng et al. presented in their ICCV 
 
 For utilizing ideas or code from this project, please cite:
 ```
+@article{rohn2024rethinking,
+  title={Rethinking the Elementary Function Fusion for Single-Image Dehazing},
+  author={Rohn, Yesian},
+  journal={arXiv preprint arXiv:2405.15817},
+  year={2024}
+}
+```
+
+```
 @inproceedings{deng2019deep,
   title={Deep multi-model fusion for single-image dehazing},
   authors={Deng, Zijun; Zhu, Lei; Hu, Xiaowei; Fu, Chi-Wing; Xu, Xuemiao; Zhang, Qing; Qin, Jing; Heng, Pheng-Ann},
